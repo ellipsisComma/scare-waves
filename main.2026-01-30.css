@@ -729,17 +729,16 @@ input[type="range"]:active {
 
 #main-nav {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: var(--gap-size);
+	justify-content: center;
 	border-block-width: var(--line-width);
 	border-block-style: solid;
 	border-block-color: var(--box-border-colour);
 	& > ul {
 		display: flex;
 		list-style-type: "";
+		margin-inline: auto;
 		padding-inline-start: 0;
 		text-align: center;
-		flex-direction: column;
 		gap: var(--gap-size);
 	}
 	& a {
@@ -939,14 +938,7 @@ textarea {
 
 	/* NAV */
 	#main-nav {
-		display: block;
 		padding-block-start: 0.2em;
-		& > ul {
-			inline-size: unset;
-			flex-direction: row;
-			justify-content: center;
-			margin-inline: auto;
-		}
 		& a {
 			flex-direction: row;
 			padding-block: 0.1em;
