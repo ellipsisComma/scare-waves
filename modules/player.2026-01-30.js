@@ -207,11 +207,6 @@ function addShow(ID) {
 	document.getElementById(`queue`).appendChild(templatedShow);
 }
 
-// add entire series to queue
-function addSeries(seriesInArchive) {
-	for (const ID of getShowIDs(seriesInArchive)) addShow(ID);
-}
-
 // add a random show to the queue
 function addRandomShow() {
 	const ID = getRandomShowID();
@@ -225,17 +220,17 @@ function addRandomShow() {
 
 // swap show with previous show in queue
 function moveShowUp(target) {
-	target.previousElementSibling?.before(target);
+	target?.previousElementSibling?.before(target);
 }
 
 // swap show with next show in queue
 function moveShowDown(target) {
-	target.nextElementSibling?.after(target);
+	target?.nextElementSibling?.after(target);
 }
 
 // remove show from queue
 function removeShow(target) {
-	target.remove();
+	target?.remove();
 }
 
 // write show parts onto page and load show audio file; if queue is empty, reset player
@@ -261,8 +256,10 @@ function loadShow() {
 		document.getElementById(`show-time-elapsed`).textContent = `00:00`;
 		document.getElementById(`player-controls`).hidden = false;
 
-		// begin playback
-		document.getElementById(`show-audio`).play();
+		// if show is marked to autoplay, begin playback
+		if (document.getElementById(`show-audio`).dataset.autoPlayNext === `true`) {
+			document.getElementById(`show-audio`).play();
+		}
 	} else {
 		// remove all queue children (including text nodes) so CSS :empty pseudo-class will apply
 		document.getElementById(`queue`).replaceChildren();
@@ -275,11 +272,23 @@ function loadShow() {
 		document.getElementById(`player-controls`).hidden = true;
 		document.getElementById(`loaded-show`).dataset.showId = ``;
 	}
+
+	document.getElementById(`show-audio`).dataset.autoPlayNext = null;
 }
 
-// remove loaded show and start next one
+// remove loaded show
 function endShow() {
+	const audioEl = document.getElementById(`show-audio`);
 	removeShow(document.getElementById(`queue`).firstElementChild);
+	if (audioEl.duration === audioEl.currentTime) audioEl.dataset.autoPlayNext = `true`;
+}
+
+// remove loaded show and mark next to autoplay
+function skipShow() {
+	if (document.getElementById(`queue`).children.length > 0) {
+		document.getElementById(`show-audio`).dataset.autoPlayNext = `true`;
+	}
+	endShow();
 }
 
 /* ---
@@ -376,7 +385,7 @@ function initialise() {
 	// player interface events
 	document.getElementById(`reset-button`).addEventListener(`click`, resetShow);
 	document.getElementById(`play-toggle`).addEventListener(`click`, togglePlay);
-	document.getElementById(`skip-button`).addEventListener(`click`, endShow);
+	document.getElementById(`skip-button`).addEventListener(`click`, skipShow);
 	document.getElementById(`seek-bar`).addEventListener(`input`, startManualSeek);
 	document.getElementById(`seek-bar`).addEventListener(`change`, endManualSeek);
 	document.getElementById(`mute-toggle`).addEventListener(`click`, toggleMute);
