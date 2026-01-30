@@ -1,0 +1,1077 @@
+/*
+FONT DECLARATIONS
+
+USER
+	THEME
+
+RESET
+
+UTILITIES
+
+DEFAULTS
+	VARIABLES
+	COLOUR PATCH
+
+	GENERAL
+	PLAYER
+	NAV
+	SECTIONS
+
+	BOOTH
+	ARCHIVE
+	ABOUT
+*/
+
+@layer reset, defaults, user, utilities;
+
+/* ====================================
+	FONT DECLARATIONS
+==================================== */
+
+/* -------------
+	WEBFONTS
+------------- */
+
+@font-face {
+	font-family: Bitter;
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+	src:
+		url("./fonts/bitter-regular-scarewaves.2024-06-07.woff2")
+		format("woff2");
+}
+@font-face {
+	font-family: Bitter;
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+	src:
+		url("./fonts/bitter-bold-scarewaves.2024-06-07.woff2")
+		format("woff2");
+}
+@font-face {
+	font-family: Bitter;
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+	src:
+		url("./fonts/bitter-italic-scarewaves.2024-06-07.woff2")
+		format("woff2");
+}
+@font-face {
+	font-family: Bitter;
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+	src:
+		url("./fonts/bitter-bold-italic-scarewaves.2024-06-07.woff2")
+		format("woff2");
+}
+
+/* --------------
+	FALLBACKS
+-------------- */
+
+@font-face {
+	font-family: "fallback Georgia"; /* general websafe */
+	size-adjust: 104%;
+	ascent-override: 75%;
+	descent-override: 25%;
+	src:
+		local("Georgia");
+}
+@font-face {
+	font-family: "fallback Droid Serif"; /* Android */
+	ascent-override: 86%;
+	descent-override: 36%;
+	src:
+		local("Droid Serif");
+}
+@font-face {
+	font-family: "fallback Caladea"; /* ChromeOS */
+	size-adjust: 111%;
+	ascent-override: 70%;
+	descent-override: 30%;
+	src:
+		local("Caladea");
+}
+
+
+
+/* ====================================
+	USER
+==================================== */
+
+@layer user {
+
+/* -----------
+	THEMES
+----------- */
+
+/* DEFINITIONS AND INITIALISATION */
+
+@property --fore-colour {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: CanvasText;
+}
+@property --back-colour {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: Canvas;
+}
+@property --hot-colour {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: LinkText;
+}
+@property --cold-colour {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: VisitedText;
+}
+:root {
+	--fore-colour: initial;
+	--back-colour: initial;
+	--hot-colour: initial;
+	--cold-colour: initial;
+}
+
+/* THEME VARIABLES */
+
+:root {
+	--fore-colour: #fdffdc;
+	--back-colour: #000627;
+	--hot-colour: #ff6767;
+	--cold-colour: #b9ab00;
+}
+@media (prefers-contrast: more) {
+	:root {
+		--fore-colour: #eee;
+		--back-colour: #111;
+		--hot-colour: #ace;
+		--cold-colour: #eca;
+	}
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--fore-colour: #270a02;
+		--back-colour: #ffe8bc;
+		--hot-colour: #a00000;
+		--cold-colour: #704214;
+	}
+	@media (prefers-contrast: more) {
+		:root {
+			--fore-colour: #222;
+			--back-colour: #fff;
+			--hot-colour: #048;
+			--cold-colour: #630;
+		}
+	}
+}
+
+/* ====================== END USER */ }
+
+
+
+/* ====================================
+	RESET
+==================================== */
+
+@layer reset {
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+button, select {
+	font-family: inherit;
+	font-size: 1em;
+	color: inherit;
+	background-color: unset;
+	border: unset;
+}
+button > * {
+	pointer-events: none;
+}
+fieldset {
+	padding: unset;
+	border: unset;
+}
+input[type="range"] {
+	all: unset;
+	outline: revert;
+	font-size: 1em;
+}
+textarea {
+	font-family: inherit;
+	color: inherit;
+	background-color: unset;
+}
+::marker {
+	font-family: inherit;
+}
+
+/* ===================== END RESET */ }
+
+
+
+/* ====================================
+	UTILITIES
+==================================== */
+
+@layer utilities {
+
+[hidden] {
+	display: none;
+}
+.visually-hidden {
+	block-size: 1px;
+	inline-size: 1px;
+	position: fixed;
+	overflow: hidden;
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+@media (forced-colors: active) {
+	/*
+	In Firefox, the colour patch can be as follows
+	because the browser automatically applies forced colours in forced-colors mode,
+	but Safari and Chrome don't change anything automatically,
+	so all forced-colors changes need to be explicit here.
+		--control-default-colour: CanvasText;
+		--control-interacted-colour: VisitedText;
+		--nav-link-default-colour: CanvasText;
+		--box-border-colour: CanvasText;
+		--icon-main-colour: CanvasText;
+		--icon-accent-colour: CanvasText;
+	*/
+	:root {
+		--text-colour: CanvasText;
+		--background-colour: Canvas;
+
+		--text-link-default-colour: LinkText;
+		--text-link-visited-colour: VisitedText;
+		--text-link-active-text-colour: ActiveText;
+		--text-link-active-background-colour: transparent;
+
+		--title-text-colour: CanvasText;
+		--title-background-colour: Canvas;
+
+		--control-default-colour: CanvasText;
+		--control-interacted-colour: VisitedText;
+		--focus-ring-colour: revert;
+
+		--selection-text-colour: revert;
+		--selection-background-colour: revert;
+		--scrollbar-thumb-colour: revert;
+		--scrollbar-gutter-colour: revert;
+
+		--box-border-colour: CanvasText;
+		--scroll-shadow-colour: CanvasText;
+
+		--nav-link-default-colour: CanvasText;
+		--nav-link-current-page-colour: VisitedText;
+		--nav-link-navigating-colour: LinkText;
+
+		--icon-main-colour: CanvasText;
+		--icon-accent-colour: CanvasText;
+
+		--line-width: 2px;
+		--control-depth: 0px;
+	}
+	:focus-visible {
+		outline: revert;
+	}
+	#volume-slider::-webkit-slider-thumb {
+		transform: translateY(calc(-1.5 * var(--gap-size)));
+	}
+	/* at :root font-size 100%, 43.75rem = 700px */
+	@media (min-width: 43.75rem) {
+		#series-list > li {
+			border-block-start-width: var(--line-width);
+			border-block-start-style: solid;
+			border-block-start-color: var(--box-border-colour);
+		}
+	}
+}
+
+/* ================= END UTILITIES */ }
+
+
+
+/* ====================================
+	DEFAULTS
+==================================== */
+
+@layer defaults {
+
+/* --------------
+	VARIABLES
+-------------- */
+
+/* GENERAL */
+
+:root {
+	--px-to-rem-260px: 16.25rem;
+	--px-to-rem-500px: 31.25rem;
+	--px-to-rem-600px: 37.5rem;
+	--px-to-rem-700px: 43.75rem;
+	--px-to-rem-800px: 50rem;
+	--px-to-rem-1200px: 75rem;
+	--px-to-rem-1240px: 77.5rem;
+
+	--widescreen-max-inline-size: var(--px-to-rem-1200px);
+	--main-column-max-inline-size: var(--px-to-rem-800px);
+	--gap-size: 0.5rem;
+	--main-column-padding: calc(2 * var(--gap-size));
+
+	--text-indent: 2rem;
+	--meta-font-size: 1em;
+	--font-stack-body:
+		Bitter,
+		"fallback Georgia", "fallback Droid Serif", "fallback Caladea",
+		Garamond, "Times New Roman", Times, serif;
+
+	--seek-bar-thumb-size: 1em;
+	--control-depth: 0.35em;
+
+	--line-width: 1px;
+	--text-underline-thickness: 0.1em;
+	--text-underline-offset: 0.15em;
+}
+
+/* COLOUR PATCH */
+
+:root {
+	--text-colour: var(--fore-colour);
+	--background-colour: var(--back-colour);
+
+	--text-link-default-colour: var(--hot-colour);
+	--text-link-visited-colour: var(--cold-colour);
+	--text-link-active-text-colour: var(--back-colour);
+	--text-link-active-background-colour: var(--cold-colour);
+
+	--title-text-colour: var(--back-colour);
+	--title-background-colour: var(--fore-colour);
+
+	--control-default-colour: var(--hot-colour);
+	--control-interacted-colour: var(--cold-colour);
+	--focus-ring-colour: var(--cold-colour);
+
+	--selection-text-colour: var(--back-colour);
+	--selection-background-colour: var(--cold-colour);
+	--scrollbar-thumb-colour: var(--hot-colour);
+	--scrollbar-gutter-colour: var(--back-colour);
+
+	--box-border-colour: var(--fore-colour);
+	--scroll-shadow-colour: var(--hot-colour);
+
+	--nav-link-default-colour: var(--fore-colour);
+	--nav-link-current-page-colour: var(--cold-colour);
+	--nav-link-navigating-colour: var(--hot-colour);
+
+	--icon-main-colour: var(--cold-colour);
+	--icon-accent-colour: var(--hot-colour);
+}
+
+/* ------------
+	GENERAL
+------------ */
+
+* {
+	scrollbar-color: var(--scrollbar-thumb-colour) var(--scrollbar-gutter-colour);
+}
+:focus-visible {
+	outline-width: var(--line-width);
+	outline-style: solid;
+	outline-color: var(--focus-ring-colour);
+	outline-offset: var(--gap-size);
+}
+::selection {
+	color: var(--selection-text-colour);
+	background-color: var(--selection-background-colour);
+}
+:root {
+	font-size: 100%;
+	transition-property: --fore-colour, --back-colour, --hot-colour, --cold-colour;
+	transition-duration: 0s;
+}
+body {
+	margin: 0;
+	color: var(--text-colour);
+	background-color: var(--background-colour);
+	text-orientation: upright;
+	font-family: var(--font-stack-body);
+	line-height: 1.5;
+}
+#container {
+	margin-inline: auto;
+	padding-block-end: 2em;
+	padding-inline: var(--main-column-padding);
+	max-inline-size: var(--main-column-max-inline-size);
+}
+h1 {
+	margin-block-start: 0.2em;
+	margin-block-end: 0;
+	font-size: 3.5em;
+	text-align: center;
+	letter-spacing: 0.15em;
+}
+h2 {
+	margin-block-start: 0.9em;
+	margin-block-end: 0.7em;
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+}
+h1, h2 {
+	text-transform: uppercase;
+	font-feature-settings: "case";
+	text-wrap-style: balance;
+}
+h3 {
+	margin-block-start: 2.4em;
+	margin-block-end: 0.4em;
+	text-wrap-style: balance;
+	& + * {
+		margin-block-start: 0;
+	}
+}
+.timestamp {
+	font-variant-numeric: tabular-nums;
+}
+.flex-list {
+	list-style-type: "";
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--gap-size);
+	margin-block: 1em;
+	padding-inline: 0;
+}
+.flex-list.control-list {
+	margin-block: 0;
+	row-gap: calc(var(--gap-size) + var(--control-depth));
+}
+.control-list .icon {
+	block-size: 1.5em;
+}
+.flex-list.show-position-controls {
+	flex-direction: column;
+	row-gap: calc(var(--gap-size));
+	padding-block-start: var(--control-depth);
+}
+.link-cloud {
+	justify-content: center;
+	gap: 1em;
+}
+ul {
+	list-style-type: disc;
+}
+ul, ol {
+	padding-inline-start: var(--text-indent);
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-inline-start: var(--text-indent);
+}
+code {
+	text-decoration-thickness: var(--text-underline-thickness);
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+	text-underline-offset: var(--text-underline-offset);
+}
+a:link {
+	color: var(--text-link-default-colour);
+	text-decoration-thickness: var(--text-underline-thickness);
+	text-underline-offset: var(--text-underline-offset);
+}
+a:visited {
+	color: var(--text-link-visited-colour);
+}
+a:active {
+	color: var(--text-link-active-text-colour);
+	background-color: var(--text-link-active-background-colour);
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.content-notes {
+	& > summary {
+		list-style-type: "";
+		display: inline-block;
+		color: var(--control-default-colour);
+		cursor: default;
+		user-select: none;
+		&::-webkit-details-marker {
+			display: none;
+		}
+		&:active {
+			color: var(--control-interacted-colour);
+		}
+		&::before {
+			content: "\2192"; /* right arrow */
+			inline-size: 1em;
+			display: inline-block;
+			text-align: center;
+		}
+	}
+	&[open] > summary {
+		color: var(--control-interacted-colour);
+		&:active {
+			color: var(--control-default-colour);
+		}
+		&::before {
+			content: "\2193"; /* down arrow */
+		}
+	}
+}
+.icon {
+	display: block;
+	block-size: 2em;
+	inline-size: auto;
+	fill: none;
+	stroke: var(--icon-main-colour);
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	user-select: none;
+}
+.svg-accent-stroke { /* must be outside .icon, because it's applied in the <symbol> elements, not in the <svg class="svg-icon"> elements */
+	stroke: var(--icon-accent-colour);
+}
+.waveform-spacer {
+	margin-block: 3em;
+	margin-inline: auto;
+	& + h3 {
+		margin-block-start: 1em;
+	}
+}
+.push-button {
+	position: relative;
+	top: calc(-1 * var(--control-depth));
+	padding-block-start: 0.5em;
+	padding-block-end: 0.25em;
+	padding-inline: 0.5em;
+	color: var(--control-default-colour);
+	border-width: var(--line-width);
+	border-style: solid;
+	border-color: var(--control-default-colour);
+	box-shadow: 0 var(--control-depth) var(--control-default-colour);
+	align-items: center;
+	& .icon {
+		stroke: var(--control-default-colour);
+	}
+	&:hover {
+		top: calc(-1 * var(--control-depth) + var(--line-width));
+		box-shadow: 0 calc(var(--control-depth) - var(--line-width)) var(--control-default-colour);
+	}
+	&:is(:active, [disabled]) {
+		top: 0;
+		color: var(--control-interacted-colour);
+		border-color: var(--control-interacted-colour);
+		box-shadow: unset;
+		& .icon {
+			stroke: var(--control-interacted-colour);
+		}
+	}
+	&[disabled] {
+		cursor: not-allowed;
+	}
+	&.icon-button {
+		padding: 0.1em;
+	}
+	&:not(.icon-button) {
+		min-inline-size: 6em;
+	}
+}
+[aria-pressed="true"] .unpressed-icon,
+[aria-pressed="false"] .pressed-icon {
+	opacity: 0;
+}
+
+/* -----------
+	PLAYER
+----------- */
+
+:is(#loaded-show, #queue):empty::after {
+	content: "Queue is empty!\0a Add shows in Booth or Archive.";
+	display: block;
+	font-style: italic;
+}
+#loaded-show:empty::after {
+	margin-block-start: 0.5em;
+	margin-block-end: 0.3em;
+	text-align: center;
+	white-space: pre;
+}
+#loaded-show > .show-content {
+	padding-inline-end: var(--gap-size);
+}
+#player-controls {
+	display: grid;
+	grid-template:
+		"	seek-controls	seek-controls	"
+		"	show-controls	audio-controls	" / auto min-content;
+	row-gap: calc(var(--gap-size) + var(--control-depth));
+	margin-block-end: var(--gap-size);
+	margin-inline: unset;
+	& > * {
+		display: flex;
+		gap: var(--gap-size);
+	}
+}
+#seek-controls {
+	grid-area: seek-controls;
+}
+#show-controls {
+	grid-area: show-controls;
+}
+#audio-controls {
+	grid-area: audio-controls;
+}
+#seek-bar {
+	inline-size: 100%;
+	padding-block-end: calc(var(--control-depth) * 0.6);
+	&::-webkit-slider-thumb {
+		block-size: var(--seek-bar-thumb-size);
+		inline-size: var(--seek-bar-thumb-size);
+		border-width: var(--line-width);
+		border-radius: 50%;
+		transform: translateY(calc(-1 * calc(var(--seek-bar-thumb-size) / 2 + var(--control-depth))));
+	}
+	&::-moz-range-thumb {
+		block-size: var(--seek-bar-thumb-size);
+		inline-size: var(--seek-bar-thumb-size);
+		border-width:  var(--line-width);
+		border-radius: 50%;
+	}
+}
+#volume-slider {
+	--thumb-block-size: 1.2em;
+	--thumb-inline-size: 0.75em;
+	inline-size: 5em;
+	padding-block-end: var(--control-depth);
+	&::-webkit-slider-thumb {
+		block-size: var(--thumb-block-size);
+		inline-size: var(--thumb-inline-size);
+		transform: translateY(-1em);
+	}
+	&::-moz-range-thumb {
+		block-size: var(--thumb-block-size);
+		inline-size: var(--thumb-inline-size);
+	}
+}
+input[type="range"] {
+	margin: 0;
+	border-block-end-width: var(--line-width);
+	border-block-end-style: solid;
+	border-block-end-color: var(--box-border-colour);
+	&::-moz-range-progress {
+		background-color: var(--control-default-colour);
+		block-size: var(--line-width);
+	}
+	&::-moz-range-thumb {
+		box-sizing: border-box;
+		background-color: var(--background-colour);
+		border-width: var(--line-width);
+		border-style: solid;
+		border-color: var(--control-default-colour);
+		border-radius: 0;
+		box-shadow: 0 var(--control-depth) var(--control-default-colour);
+		transform: translateY(calc(-1 * var(--control-depth)));
+	}
+	&:active {
+		&::-moz-range-thumb {
+			border-color: var(--control-interacted-colour);
+			box-shadow: 0 var(--control-depth) var(--control-interacted-colour);
+		}
+		&::-moz-range-progress {
+			background-color: var(--control-interacted-colour);
+		}
+	}
+}
+input[type="range"] {
+	&::-webkit-slider-runnable-track {
+		background-color: var(--control-default-colour);
+		block-size: var(--line-width);
+	}
+	&::-webkit-slider-thumb {
+		appearance: none;
+		background-color: var(--background-colour);
+		border-width: var(--line-width);
+		border-style: solid;
+		border-color: var(--control-default-colour);
+		box-shadow: 0 var(--control-depth) var(--control-default-colour);
+	}
+}
+input[type="range"]:active {
+	&::-webkit-slider-thumb {
+		border-color: var(--control-interacted-colour);
+		box-shadow: 0 var(--control-depth) var(--control-interacted-colour);
+	}
+	&::-webkit-slider-runnable-track {
+		background-color: var(--control-interacted-colour);
+		block-size: var(--line-width);
+	}
+}
+
+/* --------
+	NAV
+-------- */
+
+#main-nav {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--gap-size);
+	border-block-width: var(--line-width);
+	border-block-style: solid;
+	border-block-color: var(--box-border-colour);
+	& > ul {
+		display: flex;
+		list-style-type: "";
+		padding-inline-start: 0;
+		text-align: center;
+		flex-direction: column;
+		gap: var(--gap-size);
+	}
+	& a {
+		display: inline-flex;
+		flex-direction: column;
+		padding-block-start: 0.3em;
+		padding-inline: 0.2em;
+		align-items: center;
+		gap: 0.2em;
+		text-decoration: none;
+		user-select: none;
+		&:is(:link, :visited) {
+			color: var(--nav-link-default-colour);
+		}
+		&[aria-current="page"] {
+			color: var(--nav-link-current-page-colour);
+		}
+		&:is(:hover, :focus, :active) {
+			color: var(--nav-link-navigating-colour);
+			background-color: unset;
+		}
+	}
+}
+
+/* -------------
+	SECTIONS
+------------- */
+
+main {
+	& > *,
+	& > :target ~ :last-child,
+	& > :has(:target) ~ :last-child {
+		display: none;
+	}
+	& > :last-child,
+	& > :target,
+	& > :has(:target) {
+		display: block;
+	}
+}
+main > * > :last-child {
+	margin-block-end: 0;
+}
+
+/* ----------
+	BOOTH
+---------- */
+
+#queue {
+	display: grid;
+	row-gap: 1em;
+	margin-block-start: var(--gap-size);
+	& > li {
+		display: flex;
+		gap: var(--gap-size);
+		&:first-child [data-action="move-up"],
+		&:last-child [data-action="move-down"] {
+			visibility: hidden;
+		}
+	}
+}
+#queue-controls {
+	z-index: 3;
+	position: sticky;
+	inset-block-start: 0;
+	margin-block-start: 0;
+	margin-block-end: var(--gap-size);
+	padding-block-start: calc(2 * var(--control-depth));
+	padding-block-end: var(--gap-size);
+	background-color: var(--background-colour);
+	border-block-end-width: var(--line-width);
+	border-block-end-style: solid;
+	border-block-end-color: var(--box-border-colour);
+}
+textarea {
+	block-size: 10lh;
+	inline-size: 100%;
+	display: block;
+	margin-block: 1em;
+	padding-block-start: 0.5em;
+	padding-block-end: 0.25em;
+	padding-inline: 0.5em;
+	font-size: 1em;
+	font-family: var(--font-stack-mono);
+	line-height: 1;
+	border-width: var(--line-width);
+	border-style: solid;
+	border-color: var(--box-border-colour);
+	border-block-start-width: calc(var(--control-depth) + var(--line-width));
+	resize: none;
+}
+#import-error-list {
+	overflow-wrap: break-word;
+}
+.matched-show-id {
+	user-select: all;
+}
+
+/* ------------
+	ARCHIVE
+------------ */
+
+#series-list {
+	padding-inline-start: 0;
+	list-style-type: "";
+	border-block-end-width: var(--line-width);
+	border-block-end-style: solid;
+	border-block-end-color: var(--box-border-colour);
+	& > li {
+		display: grid;
+	}
+	& header {
+		margin-block-end: calc(-1 * var(--line-width));
+		border-block-end-width: var(--line-width);
+		border-block-end-style: solid;
+		border-block-end-color: var(--box-border-colour);
+	}
+}
+.series-content {
+	padding: var(--gap-size);
+	& > * {
+		margin-block: 0;
+	}
+}
+.series-heading,
+.show-heading {
+	font-size: 1em;
+	margin-block: 0;
+	padding-block-start: 0.35em;
+	padding-block-end: 0.1em;
+	padding-inline: 0.5em;
+	color: var(--title-text-colour);
+	background-color: var(--title-background-colour);
+}
+.series-source {
+	margin-block-start: 0.3em;
+	font-size: var(--meta-font-size);
+}
+.show-list {
+	list-style-type: "";
+	padding-inline-start: 0;
+}
+#series-list .show-list {
+	--archive-show-list-margin-inline-start: calc(1.5em + var(--gap-size));
+	margin-inline-start: var(--archive-show-list-margin-inline-start);
+	border-inline-start-width: var(--line-width);
+	border-inline-start-style: solid;
+	border-inline-start-color: var(--box-border-colour);
+}
+.show-heading {
+	display: inline-block;
+}
+.show-content {
+	padding-block: var(--gap-size);
+	padding-inline-start: var(--gap-size);
+	& > * {
+		margin-block: 0.25em;
+	}
+	& > :first-child {
+		margin-block-start: 0;
+	}
+	& > :last-child {
+		margin-block-end: 0;
+	}
+}
+[data-action="add-show"] {
+	margin-block-start: calc(var(--control-depth) / 2);
+	margin-block-end: var(--gap-size);
+	margin-inline-start: var(--gap-size);
+}
+
+/* -----------------
+	RESPONSIVITY
+----------------- */
+
+/* site is fine down to 300px wide, then various things overflow horizontally around 275px */
+
+/* at :root font-size 100%, 31.25rem = 500px */
+@media (min-width: 31.25rem) {
+	/* GENERAL */
+	body {
+		--meta-font-size: 0.75em;
+		font-size: 1.2em;
+	}
+	h1 {
+		margin-block-end: 0.1em;
+	}
+	h1, h2 {
+		--shadow-1: 0.07em 0.07em 0;
+		--shadow-2: -0.05em -0.05em 0;
+		--shadow-3: 0.1em 0.09em 0;
+		text-shadow: var(--shadow-1) var(--background-colour), var(--shadow-2) var(--background-colour), var(--shadow-3) var(--text-colour);
+		&::selection, & ::selection {
+			text-shadow: var(--shadow-1) var(--selection-background-colour), var(--shadow-2) var(--selection-background-colour), var(--shadow-3) var(--selection-text-colour);
+		}
+	}
+
+	/* NAV */
+	#main-nav {
+		display: block;
+		padding-block-start: 0.2em;
+		& > ul {
+			inline-size: unset;
+			flex-direction: row;
+			justify-content: center;
+			margin-inline: auto;
+		}
+		& a {
+			flex-direction: row;
+			padding-block: 0.1em;
+			span {
+				margin-block-start: 0.2em;
+			}
+		}
+	}
+
+	/* BOOTH */
+	.show-position-controls .icon {
+		block-size: 1em;
+	}
+
+	/* ARCHIVE */
+	#series-list .show-list {
+		--archive-show-list-margin-inline-start: calc(1em + var(--gap-size));
+	}
+}
+
+/* at :root font-size 100%, 37.5rem = 600px */
+@media (min-width: 37.5rem) {
+	/* PLAYER */
+	#player-controls {
+		grid-template:
+			"show-controls	seek-controls	audio-controls" / min-content auto min-content;
+		column-gap: var(--gap-size);
+	}
+}
+
+/* at :root font-size 100%, 43.75rem = 700px */
+@media (min-width: 43.75rem) {
+	/* ARCHIVE */
+	.series-heading {
+		font-size: 1em;
+		text-align: end;
+	}
+	#series-list {
+		& > li {
+			grid-template-columns: var(--px-to-rem-260px) auto;
+		}
+		& header {
+			position: sticky;
+			inset-block-start: 0;
+			z-index: 3;
+			align-self: start;
+			margin-inline-end: calc(-1 * var(--line-width));
+			background-color: unset;
+			border-block-end: unset;
+			border-inline-end-width: var(--line-width);
+			border-inline-end-style: solid;
+			border-inline-end-color: var(--box-border-colour);
+		}
+		& .show-list {
+			margin-inline: 0;
+			padding-inline: 0;
+		}
+	}
+	.return-links {
+		margin-block-end: 1lh;
+	}
+	.series-content {
+		padding-inline-start: 0;
+	}
+}
+
+/* at :root font-size 100%, 77.5rem = 1240px */
+@media (min-width: 77.5rem) {
+	/* GENERAL */
+	#container {
+		max-inline-size: var(--widescreen-max-inline-size);
+		display: grid;
+		grid-template:
+			"	player	heading		"
+			"	player	nav			"
+			"	player	sections	";
+		column-gap: var(--gap-size);
+	}
+	#page-header {
+		grid-area: heading;
+	}
+
+	/* PLAYER */
+	#player-container {
+		grid-area: player;
+		block-size: max-content;
+		position: sticky;
+		inline-size: calc(var(--widescreen-max-inline-size) - var(--main-column-max-inline-size) - var(--gap-size));
+		inset-block-start: var(--gap-size);
+		border-width: var(--line-width);
+		border-style: solid;
+		border-color: var(--box-border-colour);
+	}
+	#player-app {
+		overflow: auto;
+		max-block-size: calc(100vb - calc(2 * var(--gap-size)));
+	}
+	#loaded-show > .show-heading {
+		display: block;
+	}
+	#player-controls {
+		margin: var(--gap-size);
+		grid-template:
+			"	seek-controls	seek-controls	"
+			"	show-controls	audio-controls	" / auto min-content;
+	}
+	#seek-controls {
+		padding-block-start: var(--control-depth);
+	}
+
+	/* NAV */
+	#main-nav {
+		grid-area: nav;
+	}
+
+	/* SECTIONS */
+	main {
+		grid-area: sections;
+		inline-size: calc(var(--main-column-max-inline-size) - 2 * var(--main-column-padding));
+	}
+
+	/* BOOTH */
+	#queue {
+		margin-inline: 0;
+	}
+}
+
+/* ================== END DEFAULTS */ }
