@@ -1,12 +1,14 @@
 # Scare Waves
 
-Scare Waves is a client-side playlist-maker and audio player for a curated collection of horror, weird fiction, and SFF audiobooks and radio plays. It has no dependencies/is built on the web platform. Once a small project, it's since become a rough testbed for simple web platform features and coding tests, including, at one point or another:
+[Scare Waves](https://scarewaves.com/) is a client-side playlist-maker and audio player for a curated collection of horror, weird fiction, and SFF audiobooks and radio plays. It has no dependencies/is built on the web platform. Once a small project, it's since become a rough testbed for simple web platform features and coding tests, including, at one point or another:
 
 * styling native range inputs
 * basic string similarity algorithms (Levenshtein Distance, then Jaro Similarity)
 * `forced-colors` CSS for accessibility
 * ensuring consistent state across browsing contexts in the same group
 * building out a web feed into an HTML DOM via XSLT, in the browser
+
+**Note:** This repo doesn't contain the audio files used on the site.
 
 ## Removed/rejected features
 
