@@ -420,6 +420,7 @@ function initialise() {
 	loadQueue();
 
 	// update player state
+	setVolume();
 	updateVolumeControls();
 }
 
