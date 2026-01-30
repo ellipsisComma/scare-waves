@@ -322,23 +322,31 @@ function endManualSeek() {
 }
 
 // toggle audio mute/unmute
+// if unmuting when volume slider is set to 0, reset volume slider to the default value
 function toggleMute() {
+	const audioEl = document.getElementById(`show-audio`);
+	if (audioEl.muted && audioEl.volume === 0) {
+		audioEl.volume = Number(document.getElementById(`volume-slider`).getAttribute(`value`)) / 100;
+	}
 	document.getElementById(`show-audio`).muted = !document.getElementById(`show-audio`).muted;
 }
 
 // set audio volume
+// if audio is muted, unmute; else if volume is set to 0, mute
 function setVolume() {
-	document.getElementById(`show-audio`).volume = document.getElementById(`volume-slider`).value / 100;
-	if (document.getElementById(`show-audio`).muted) toggleMute();
+	const audioEl = document.getElementById(`show-audio`);
+	audioEl.volume = (document.getElementById(`volume-slider`).value / 100) ** 2;
+	if (audioEl.muted || audioEl.volume === 0) toggleMute();
 }
 
 // update state of mute button and volume slider to match show audio state
 function updateVolumeControls() {
-	if (document.getElementById(`show-audio`).muted || document.getElementById(`show-audio`).volume === 0) {
+	const audioEl = document.getElementById(`show-audio`);
+	if (audioEl.muted || audioEl.volume === 0) {
 		document.getElementById(`volume-slider`).value = 0;
 		document.getElementById(`mute-toggle`).ariaPressed = `true`;
 	} else {
-		document.getElementById(`volume-slider`).value = document.getElementById(`show-audio`).volume * 100;
+		document.getElementById(`volume-slider`).value = audioEl.volume ** (1/2) * 100;
 		document.getElementById(`mute-toggle`).ariaPressed = `false`;
 	}
 }
