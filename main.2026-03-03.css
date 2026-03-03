@@ -1034,7 +1034,7 @@ textarea {
 	}
 	#player-app {
 		overflow: auto;
-		max-block-size: calc(100vb - calc(2 * var(--gap-size)));
+		max-block-size: calc(100svb - calc(2 * var(--gap-size)));
 	}
 	#loaded-show > .show-heading {
 		display: block;
