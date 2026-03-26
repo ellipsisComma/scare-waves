@@ -266,11 +266,11 @@ textarea {
 
 		--selection-text-colour: revert;
 		--selection-background-colour: revert;
+
 		--scrollbar-thumb-colour: revert;
 		--scrollbar-gutter-colour: revert;
 
 		--box-border-colour: CanvasText;
-		--scroll-shadow-colour: CanvasText;
 
 		--nav-link-default-colour: CanvasText;
 		--nav-link-current-page-colour: VisitedText;
@@ -363,11 +363,11 @@ textarea {
 
 	--selection-text-colour: var(--back-colour);
 	--selection-background-colour: var(--cold-colour);
+
 	--scrollbar-thumb-colour: var(--hot-colour);
 	--scrollbar-gutter-colour: var(--back-colour);
 
 	--box-border-colour: var(--fore-colour);
-	--scroll-shadow-colour: var(--hot-colour);
 
 	--nav-link-default-colour: var(--fore-colour);
 	--nav-link-current-page-colour: var(--cold-colour);
