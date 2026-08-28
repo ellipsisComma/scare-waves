@@ -12,7 +12,7 @@ const archiveData = [
 "code": `Black-Chapel`,
 "heading": `<cite>The Black Chapel</cite>`,
 "blurb": `A 1937–39 horror series hosted and narrated by the insane organist of a derelict church (played by Ted Osbourne); only two episodes survive.`,
-"source": `<a href="https://www.radioechoes.com/?page=series&genre=OTR-Thriller&series=The%20Black%20Chapel">Radio Echoes</a>`,
+"source": `<a href="https://www.radioechoes.com/?page=series&genre=OTR-Thriller&series=The%20Black%20Chapel" aria-label="Find original files for The Black Chapel on Radio Echoes">Radio Echoes</a>`,
 "shows": [
 	{
 	"code": `The-Mahogany-Coffin`,
@@ -26,7 +26,7 @@ const archiveData = [
 "code": `Black-Mass`,
 "heading": `<cite>The Black Mass</cite>`,
 "blurb": `A 1963–67 anthology of mostly gothic and cosmic horror stories adapted for radio, largely performed by Erik Bauersfeld.`,
-"source": `<a href="https://web.archive.org/web/20240812113659/http://www.kpfahistory.info/black_mass_home.html"><abbr>KPFA</abbr> History</a> (via Wayback)<!--the site of John Whiting, technical producer-->`,
+"source": `<a href="https://web.archive.org/web/20240812113659/http://www.kpfahistory.info/black_mass_home.html" aria-label="Find original files for The Black Mass on the KPFA History (via the Wayback Machine)"><abbr>KPFA</abbr> History</a> (via Wayback)<!--the site of John Whiting, technical producer-->`,
 "shows": [
 	{
 	"code": `07-Oil-of-Dog`,
@@ -58,7 +58,7 @@ const archiveData = [
 "code": `CAS-selection`,
 "heading": `<abbr>CAS</abbr> selection`,
 "blurb": `Collected readings of the weird fiction of Clark Ashton Smith.`,
-"source": `<a href="http://www.eldritchdark.com/writings/spoken-word/">The Eldritch Dark</a>`,
+"source": `<a href="http://www.eldritchdark.com/writings/spoken-word/" aria-label="Find original files for the CAS selection on Eldritch Dark">The Eldritch Dark</a>`,
 "shows": [
 	{
 	"code": `The-City-of-the-Singing-Flame`,
@@ -84,7 +84,7 @@ const archiveData = [
 "code": `CBS-Radio-Workshop`,
 "heading": `<cite><abbr>CBS</abbr> Radio Workshop</cite>`,
 "blurb": `A brief 1956–57 revival of the <cite>Columbia Workshop</cite> series' experimental radio tradition, by the Columbia Broadcasting System.`,
-"source": `<a href="https://archive.org/details/OTRR_CBS_Radio_Workshop_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_CBS_Radio_Workshop_Singles" aria-label="Find original files for the CBS Radio Workshop on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `66-Nightmare`,
@@ -98,7 +98,7 @@ const archiveData = [
 "code": `Columbia-Workshop`,
 "heading": `<cite>Columbia Workshop</cite>`,
 "blurb": `A 1936–47 anthology of experimental radio plays organised by Irving Reis to push the boundaries of the medium; succeeded by the <cite><abbr>CBS</abbr> Radio Workshop</cite>.`,
-"source": `<a href="https://www.radioechoes.com/?page=series&genre=OTR-Drama&series=Columbia%20Workshop">Radio Echoes</a>`,
+"source": `<a href="https://www.radioechoes.com/?page=series&genre=OTR-Drama&series=Columbia%20Workshop" aria-label="Find original files for the Columbia Workshop on Radio Echoes">Radio Echoes</a>`,
 "shows": [
 	{
 	"code": `A034-The-Fall-of-the-City`,
@@ -118,7 +118,7 @@ const archiveData = [
 "code": `Dimension-X`,
 "heading": `<cite>Dimension X</cite>`,
 "blurb": `(X X x x x…) A 1950–51 sci-fi series of adaptations and originals mostly scripted by George Lefferts and Ernest Kinoy; fore-runner to <cite>X Minus One</cite>.`,
-"source": `<a href="https://archive.org/details/OTRR_Dimension_X_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_Dimension_X_Singles" aria-label="Find original files for Dimension X on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `26-And-the-Moon-be-Still-as-Bright`,
@@ -150,7 +150,7 @@ const archiveData = [
 "code": `Escape`,
 "heading": `<cite>Escape</cite>`,
 "blurb": `A 1947–54 anthology of escapist radio plays that shared its talent with <cite>Suspense</cite>, and more often delved into horror and science fiction.`,
-"source": `<a href="https://archive.org/details/OTRR_Escape_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_Escape_Singles" aria-label="Find original files for Escape on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `015-Casting-the-Runes`,
@@ -176,7 +176,7 @@ const archiveData = [
 "code": `Hall-of-Fantasy`,
 "heading": `<cite>The Hall of Fantasy</cite>`,
 "blurb": `A series of supernatural stories broadcast in Utah in 1949 and nationally in 1952–53. The series was written and directed by Richard Thorne.`,
-"source": `<a href="https://archive.org/details/470213ThePerfectScript">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/470213ThePerfectScript" aria-label="Find original files for The Hall of Fantasy on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `A21-The-Judges-House`,
@@ -196,7 +196,7 @@ const archiveData = [
 "code": `LibriVox-selection`,
 "heading": `LibriVox selection`,
 "blurb": `LibriVox is a catalogue of public domain audiobook readings, including many weird fiction and horror classics from decades and centuries ago.`,
-"source": `<a href="https://librivox.org">LibriVox</a>`,
+"source": `<a href="https://librivox.org" aria-label="Find original files for the LibriVox selection on LibriVox">LibriVox</a>`,
 "shows": [
 	{
 	"code": `The-Nameless-City`,
@@ -348,7 +348,7 @@ const archiveData = [
 "code": `Lights-Out`,
 "heading": `<cite>Lights Out</cite>`,
 "blurb": `A foundational horror series, began by Wyllis Cooper in 1934, headed by Arch Oboler until 1947.`,
-"source": `<a href="https://archive.org/details/LightsOutoldTimeRadio">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/LightsOutoldTimeRadio" aria-label="Find original files for Lights Out on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `A040-Chicken-Heart`,
@@ -368,7 +368,7 @@ const archiveData = [
 "code": `Mercury-Theatre`,
 "heading": `<cite>The Mercury Theatre</cite>`,
 "blurb": `A 1938 extension of Orson Welles' Mercury Theatre; adapted classic fiction to the airwaves, with Welles starring in each show.`,
-"source": `<a href="https://archive.org/details/OrsonWelles_MercuryTheatre">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OrsonWelles_MercuryTheatre" aria-label="Find original files for The Mercury Theatre on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `17-The-War-of-the-Worlds`,
@@ -382,7 +382,7 @@ const archiveData = [
 "code": `Mindwebs`,
 "heading": `<cite>Mindwebs</cite>`,
 "blurb": `A 1975–84 series of sci-fi, fantasy, and horror short story readings by Michael Hanson, who also chose the often-jazzy musical accompaniment.`,
-"source": `<a href="https://archive.org/details/MindWebs_201410">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/MindWebs_201410" aria-label="Find original files for Mindwebs on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `001-Carcinoma-Angels`,
@@ -486,7 +486,7 @@ const archiveData = [
 "code": `Nightfall`,
 "heading": `<cite>Nightfall</cite>`,
 "blurb": `A 1980–83 Canadian series of original and adapted horror stories created by Bill Howell.`,
-"source": `<a href="https://archive.org/details/CBC_NightfallOTR">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/CBC_NightfallOTR" aria-label="Find original files for Nightfall on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `003-Welcome-to-Homerville`,
@@ -518,7 +518,7 @@ const archiveData = [
 "code": `Quiet-Please`,
 "heading": `<cite>Quiet, Please</cite>`,
 "blurb": `A 1947–49 radio horror anthology written by Wyllis Cooper, starring radio announcer Ernest Chappell in roles speaking directly to the audience.`,
-"source": `<a href="https://www.quietplease.org">quietplease.org</a>`,
+"source": `<a href="https://www.quietplease.org" aria-label="Find original files for Quiet, Please on quietplease.org">quietplease.org</a>`,
 "shows": [
 	{
 	"code": `001-Nothing-Behind-the-Door`,
@@ -586,7 +586,7 @@ const archiveData = [
 "code": `Radio-City-Playhouse`,
 "heading": `<cite>Radio City Playhouse</cite>`,
 "blurb": `A 1948–50 anthology of original radio dramas and adaptations, including a few with a touch of the supernatural.`,
-"source": `<a href="https://archive.org/details/radio_city_playhouse_202008">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/radio_city_playhouse_202008" aria-label="Find original files for Radio City Playhouse on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `58-The-Wind`,
@@ -600,7 +600,7 @@ const archiveData = [
 "code": `Seeing-Ear-Theater`,
 "heading": `<cite>Seeing Ear Theater</cite>`,
 "blurb": `A turn-of-the-millennium online sci-fi and horror radio play revival that produced both originals and adaptations.<!--episode numbers are taken from the internet archive (from actual file names, not the numbers in the audio player's file list), but may be incorrect-->`,
-"source": `<a href="https://archive.org/details/SETheater">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/SETheater" aria-label="Find original files for Seeing Ear Theatre on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `Greedy-Choke-Puppy`,
@@ -650,7 +650,7 @@ const archiveData = [
 "code": `Sleep-No-More`,
 "heading": `<cite>Sleep No More</cite>`,
 "blurb": `A 1956–57 anthology of short horror stories read by actor Nelson Olmsted after tightening budgets started to make full radio dramas infeasible.`,
-"source": `<a href="https://archive.org/details/sleep_no_more_radio">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/sleep_no_more_radio" aria-label="Find original files for Sleep No More on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `15-Thus-I-Refute-Beelzy-and-The-Bookshop`,
@@ -670,7 +670,7 @@ const archiveData = [
 "code": `Suspense`,
 "heading": `<cite>Suspense</cite>`,
 "blurb": `A 1940–62 anthology made by a bevy of talent. Most shows featured ordinary people thrust into suspenseful—even supernatural—situations.`,
-"source": `<a href="https://archive.org/details/OTRR_Suspense_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_Suspense_Singles" aria-label="Find original files for Suspense on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `011-The-Hitch-Hiker`,
@@ -732,7 +732,7 @@ const archiveData = [
 "code": `Weird-Circle`,
 "heading": `<cite>The Weird Circle</cite>`,
 "blurb": `A 1943–45 anthology that adapted classic horror and supernatural tales to the airwaves, with low budgets limiting the use of music and sound effects.`,
-"source": `<a href="https://archive.org/details/OTRR_Weird_Circle_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_Weird_Circle_Singles" aria-label="Find original files for The Weird Circle on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `43-The-Bell-Tower`,
@@ -746,7 +746,7 @@ const archiveData = [
 "code": `X-Minus-One`,
 "heading": `<cite>X Minus One</cite>`,
 "blurb": `5, 4, 3, 2… x minus 1. A 1955–58 sci-fi series of adaptions and originals mostly scripted by George Lefferts and Ernest Kinoy; successor to <cite>Dimension X</cite>.`,
-"source": `<a href="https://archive.org/details/OTRR_X_Minus_One_Singles">Internet Archive</a>`,
+"source": `<a href="https://archive.org/details/OTRR_X_Minus_One_Singles" aria-label="Find original files for X Minus One on the Internet Archive">Internet Archive</a>`,
 "shows": [
 	{
 	"code": `037-The-Cave-of-Night`,
