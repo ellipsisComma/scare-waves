@@ -226,13 +226,13 @@
 			<legend class="visually-hidden">Player controls</legend>
 			<fieldset id="show-controls">
 				<legend class="visually-hidden">Show controls</legend>
-				<button id="reset-button" class="push-button icon-button" type="button" aria-controls="show-audio">
+				<button id="reset-button" class="push-button icon-button" type="button">
 					<svg class="icon" viewBox="0 0 18 18" role="img">
 						<title>Reset show</title>
 						<use href="#svg-reset" />
 					</svg>
 				</button>
-				<button id="play-toggle" class="push-button icon-button" type="button" aria-controls="show-audio" aria-pressed="false">
+				<button id="play-toggle" class="push-button icon-button" type="button" aria-pressed="false">
 					<svg class="icon" viewBox="0 0 18 18" role="img">
 						<title>Play show</title>
 						<use class="unpressed-icon" href="#svg-play" />
@@ -252,7 +252,7 @@
 					<span class="visually-hidden">Elapsed time: </span>
 					<span id="show-time-elapsed" class="timestamp">00:00</span>
 				</output>
-				<input id="seek-bar" type="range" min="0" max="100" value="0" aria-controls="show-audio" aria-label="Go to time in show">
+				<input id="seek-bar" type="range" min="0" max="100" value="0" aria-label="Go to time in show">
 				<span aria-live="polite">
 					<span class="visually-hidden">Total time: </span>
 					<span id="show-time-total" class="timestamp">00:00</span>
@@ -260,14 +260,14 @@
 			</fieldset><!--#seek-controls end-->
 			<fieldset id="audio-controls">
 				<legend class="visually-hidden">Volume controls</legend>
-				<button id="mute-toggle" class="push-button icon-button" type="button" aria-controls="show-audio" aria-pressed="false">
+				<button id="mute-toggle" class="push-button icon-button" type="button" aria-pressed="false">
 					<svg class="icon" viewBox="0 0 18 18" role="img">
 						<title>Mute audio</title>
 						<use class="unpressed-icon" href="#svg-unmuted" />
 						<use class="pressed-icon" href="#svg-muted" />
 					</svg>
 				</button>
-				<input id="volume-slider" type="range" min="0" max="100" value="80" aria-controls="show-audio" aria-label="Change audio volume">
+				<input id="volume-slider" type="range" min="0" max="100" value="80" aria-label="Change audio volume">
 			</fieldset><!--#audio-controls end-->
 		</fieldset><!--#player-controls end-->
 
